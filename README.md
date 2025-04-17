@@ -1,9 +1,17 @@
+# Повторне імпортування бібліотеки після скидання середовища
+from pathlib import Path
+
+# Шлях до файлу
+html_file_path = Path("/mnt/data/index_final.html")
+
+# HTML-код з новою email-адресою
+html_content = """
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HelpTech – Ремонт техніки у Плзні</title>
+  <title>HelpTech – Ремонт техніки у Плзені</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -80,7 +88,7 @@
 </head>
 <body>
   <header>
-    <h1>HelpTech – Ремонт техніки у Плзні</h1>
+    <h1>HelpTech – Ремонт техніки у Плзені</h1>
     <p>📞 +420 607 181 450 | 🕙 10:00 – 19:00 | Павло</p>
     <p>📩 Email: <a href="mailto:helptechofficial24@gmail.com" style="color:white;">helptechofficial24@gmail.com</a></p>
     <p>💬 Telegram: <a class="telegram" href="https://t.me/HelpTechCZ">@HelpTechCZ</a></p>
@@ -120,7 +128,13 @@
   </div>
 
   <footer>
-    &copy; 2025 HelpTech | Створено з ❤️ у Плзні
+    &copy; 2025 HelpTech | Створено з ❤️ у Плзені
   </footer>
 </body>
 </html>
+"""
+
+# Зберегти файл
+html_file_path.write_text(html_content, encoding="utf-8")
+
+html_file_path.name
